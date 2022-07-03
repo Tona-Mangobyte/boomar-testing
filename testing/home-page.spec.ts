@@ -31,17 +31,22 @@ test.describe('feature boomar', () => {
 
   });
 
-  test('go to login', async ({ page }) => {
+  test('go to login', async ({ context }) => {
+    const page = await context.newPage();
     await page.goto(`${process.env.BASE_URL}/login/`);
 
     await expect(page).toHaveURL(`${process.env.BASE_URL}/login/`);
 
-    await page.fill("input[name='identifier']", process.env.USERNAME)
+    await page.fill("input[name='identifier']", process.env.USER_NAME)
     await page.fill("input[name='password']", process.env.PASSWORD);
-    await page.click('text=Login')
 
-    await page.goto(process.env.BASE_URL);
+    await page.locator('.icon-password').click()
+    await expect(page.locator("input[name='identifier']")).toHaveText(process.env.USER_NAME)
+    await expect(page.locator("input[name='password']")).toHaveText(process.env.PASSWORD)
+    // await page.click("input[name='submit']")
+
+    /*await page.goto(process.env.BASE_URL);
     const title = page.locator('.l-header__sitename__link');
-    await expect(title).toHaveText('Boomar');
+    await expect(title).toHaveText('Boomar');*/
   });
 });
