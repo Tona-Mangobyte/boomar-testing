@@ -9,6 +9,7 @@
     "test": "playwright test --config=testing/playwright.config.ts"
   },
   "devDependencies": {
-    "@playwright/test": "^1.23.1"
+    "@playwright/test": "^1.23.1",
+    "dotenv": "^16.0.1"
   }
 }
