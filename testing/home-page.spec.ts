@@ -36,8 +36,8 @@ test.describe('feature boomar', () => {
 
     await expect(page).toHaveURL(`${process.env.BASE_URL}/login/`);
 
-    await page.fill("input[name='identifier']", 'tona@mango-byte.com')
-    await page.fill("input[name='password']", 'MB@q1w2e3r4t5');
+    await page.fill("input[name='identifier']", process.env.USERNAME)
+    await page.fill("input[name='password']", process.env.PASSWORD);
     await page.click('text=Login')
 
     await page.goto(process.env.BASE_URL);
