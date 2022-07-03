@@ -1,0 +1,14 @@
+{
+  "name": "boomar-testing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Tona-Mangobyte/boomar-testing.git",
+  "author": "Tona <tona@mango-byte.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "playwright test --config=testing/playwright.config.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.23.1"
+  }
+}
