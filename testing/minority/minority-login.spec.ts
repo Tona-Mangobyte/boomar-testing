@@ -4,8 +4,8 @@ test.describe('feature login in minority', () => {
 
     test('go to login page', async ({ page }) => {
         await page.goto(`${process.env.BASE_URL_MINORITY}/login/`)
-        await page.fill("input[name='email']", process.env.USER_NAME_MINORITY)
-        await page.fill("input[name='password']", process.env.PASSWORD_MINORITY)
+        await page.fill("input[name='email']", 'process.env.USER_NAME_MINORITY')
+        await page.fill("input[name='password']", 'process.env.PASSWORD_MINORITY')
 
         // await expect(page.locator("input[name='email']")).toHaveText(process.env.USER_NAME_MINORITY)
         // await expect(page.locator("input[name='password']")).toHaveText(process.env.PASSWORD_MINORITY)
